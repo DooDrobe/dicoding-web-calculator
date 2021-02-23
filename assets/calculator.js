@@ -1,12 +1,12 @@
 const calculator = {
-    displayNumber: 0;
+    displayNumber: '0',
     operator: null,
-    firstnumber: null, //kita gunakan nilai null terlebih dahulu karena properti tersebut akan diberikan nilai ketika pengguna melakukan aksi.
+    firstNumber: null, //kita gunakan nilai null terlebih dahulu karena properti tersebut akan diberikan nilai ketika pengguna melakukan aksi.
     waitingForSecondNumber: false //merupakan kondisi di mana kalkulator sedang menunggu pengguna menentukkan angka kedua dalam melakukan perhitungan.
 };
 
 //update data
-function updateDispkay(){
+function updateDisplay(){
     document.querySelector("#displayNumber").innerText = calculator.displayNumber;
 
 }
