@@ -1,21 +1,37 @@
-const firstName = prompt("Siapa nama depanmu?");
-const lastName = prompt("Siapa nama belakangmu?");
-const language = prompt("Bisa berbahasa apa?");
- 
-const user = {
-   name: {
-       first: firstName,
-       last: lastName,
-   },
-   language: language
+const calculator = {
+    displayNumber: 0;
+    operator: null,
+    firstnumber: null, //kita gunakan nilai null terlebih dahulu karena properti tersebut akan diberikan nilai ketika pengguna melakukan aksi.
+    waitingForSecondNumber: false //merupakan kondisi di mana kalkulator sedang menunggu pengguna menentukkan angka kedua dalam melakukan perhitungan.
 };
+
+//update data
+function updateDispkay(){
+    document.querySelector("#displayNumber").innerText = calculator.displayNumber;
+
+}
+
+//fungsi Clear calculator
+function clearCalculator() {
+    calculator.displayNumber = '0';
+    calculator.operator = null;
+    calculator.firstNumber = null;
+    calculator.waitingForSecondNumber = false;
+ }
+
+ //fungsi untukmemasukkan inputan angka ke display
+ function inputDigit(digit) {
+    calculator.displayNumber += digit;
+ }
+
+const buttons = document.querySelectorAll(".button");
+for (let button of buttons) {
+   button.addEventListener('click', function(event) {
  
-if (user.language === "English") {
-   alert("Nice to meet you " + user.name.first + " " + user.name.last + "!");
-} else if (user.language === "French") {
-   alert("Ravi de vous rencontrer " + user.name.first + " " + user.name.last + "!");
-} else if (user.language === "Japanese") {
-   alert("Hajimemashite, " + user.name.first + " " + user.name.last + "!");
-} else {
-   alert("Senang bertemu dengan Anda " + user.name.first + " " + user.name.last + "!");
+       // mendapatkan objek elemen yang diklik
+       const target = event.target;
+ 
+       inputDigit(target.innerText);
+       updateDisplay()
+   });
 }
