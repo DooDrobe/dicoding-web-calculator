@@ -37,6 +37,9 @@ body{
 .button:hover{
     font-weight: bold;
 }
+
+
+
 .button{
     flex-basis: 25%;
 
@@ -47,6 +50,12 @@ body{
     border: 1px solid black;
     background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
 }
+@media screen and (max-width: 513px) {
+    .button {
+        padding: 10px;
+    }
+ }
+
 .operator, .negative, .equals{
     background: orange;
 }
