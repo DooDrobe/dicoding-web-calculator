@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    border-radius: 5px;
     
 }
 
@@ -12,13 +11,38 @@ body{
     box-shadow: 0px 6px 21px -4px rgba(0,0,0,0.77);
     border-radius: 20px;
     padding: 30px;
+    margin-top: 20px;
     
+}
+
+.history{
+    width: 80%;
+    margin: 30px auto 0 auto;
+    overflow: scroll;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
 }
 
 .display{
     color: white;
     background-color: #2e3330;
     padding: 10px 20px;
+}
+
+th, td{
+    text-align: center;
+    padding: 16px;
+}
+th{
+    background-color: orange;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: #d2d2d2;
 }
 
 .flex-container-column{
@@ -54,6 +78,9 @@ body{
 @media screen and (max-width: 513px) {
     .button {
         padding: 10px;
+    }
+    .history{
+        width: 100%;
     }
  }
 
